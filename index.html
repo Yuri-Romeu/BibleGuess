@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel="stylesheet" href="style.css" />
+          <title>BibleGuess</title>
+     </head>
+     <body>
+          <div class="container">
+               <h1>BibleGuess</h1>
+               <h4>Adivinhe o livro e o versículo da Bíblia:</h4>
+               <div class="text-area">
+                    <p id="bible-text">Buscando...</p>
+               </div>
+
+               <div class="form">
+                    <input
+                         type="text"
+                         placeholder="Nome do Livro; Ex: Mateus"
+                         id="livro"
+                         required
+                    />
+                    <input type="text" placeholder="Numero do Capitulo" id="cap" required />
+                    <input type="text" placeholder="Numero do versículo" id="verso" required />
+                    <button id="submit">Enviar</button>
+               </div>
+          </div>
+     </body>
+     <script src="main.js"></script>
+</html>
