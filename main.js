@@ -1,5 +1,7 @@
 const bibleText = document.getElementById('bible-text');
 const submit = document.getElementById('submit');
+const textUser = document.getElementById('user-text');
+
 let dataBible = null;
 window.onload = () => {
      randomVerse();
@@ -24,7 +26,7 @@ submit.addEventListener('click', () => {
                location.reload();
           }
      }
-
+     userText(livro, cap, verso);
      executarComIntervalo();
 });
 
@@ -67,4 +69,22 @@ function verificarValor(elemento, valorCorreto) {
           elemento.style.backgroundColor = elemento.value == valorCorreto ? 'green' : 'red';
           setTimeout(resolve, 1200);
      });
+}
+
+async function userText(livro, cap, verso) {
+     try {
+          const response = await fetch(
+               `https://bible-api.com/${livro.value} ${cap.value}:${verso.value}?translation=almeida`,
+          );
+
+          if (!response.ok) {
+               textUser.innerHTML = ' erro ao buscar:';
+          }
+
+          const data = await response.json();
+          textUser.style.display = 'block';
+          textUser.innerHTML = `<p>"${data.text}" ${livro.value} ${cap.value}:${verso.value}</p>`;
+     } catch (error) {
+          (textUser.innerHTML = ' erro ao buscar:'), error;
+     }
 }

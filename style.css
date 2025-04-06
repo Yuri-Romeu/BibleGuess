@@ -64,3 +64,36 @@ body {
           cursor: pointer;
      }
 }
+
+#user-text {
+     display: none;
+     width: 600px;
+     font-size: 17px;
+     background-color: #964b009f;
+     padding: 20px;
+     border-radius: 5px;
+     -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+     -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+     box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media (max-width: 768px) {
+     body {
+          font-size: 13px;
+     }
+
+     .text-area {
+          font-size: 17px;
+     }
+
+     .form {
+          display: flex;
+          flex-direction: column;
+     }
+
+     #user-text {
+          width: 250px;
+          margin: auto 0;
+     }
+}
